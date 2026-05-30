@@ -104,11 +104,13 @@ async function clearSession() {
 }
 
 function applyName(n) {
-    uName = n;
-    document.querySelectorAll('.uname,.h-name-inline,.letter-name').forEach(el => el.textContent = n);
-    document.querySelectorAll('.uname2').forEach(el => el.textContent = n);
-    document.getElementById('memWith').textContent = 'with ' + n;
-    document.getElementById('schedFor').textContent = 'for ' + n;
+    const maxLen = 15;
+    const truncated = n.length > maxLen ? n.slice(0, maxLen) : n;
+    uName = truncated;
+    document.querySelectorAll('.uname,.h-name-inline,.letter-name').forEach(el => el.textContent = truncated);
+    document.querySelectorAll('.uname2').forEach(el => el.textContent = truncated);
+    document.getElementById('memWith').textContent = 'with ' + truncated;
+    document.getElementById('schedFor').textContent = 'for ' + truncated;
 }
 
 const loginEl = document.getElementById('login');
