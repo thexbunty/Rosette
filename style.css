@@ -1194,6 +1194,25 @@
         transform: translateY(0);
     }
 
+    .uname,
+    .uname2,
+    .h-name-inline,
+    .letter-name,
+    #memWith,
+    #schedFor {
+        display: inline-block;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        vertical-align: bottom;
+    }
+
+    .h-title {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+
     @media(max-width:480px) {
         .stats {
             display: flex;
